@@ -11,16 +11,16 @@ path = input("Enter path to .py file for review:") #Gather path
 filename = input("Enter filename:") #Gather path
 print("Converting into .txt file for review...")
 os.rename(path, filename+'.txt') #Conversion to .txt file
-newfilename = input("Conversion complete, enter new path name to begin review:")
+#os.path.abspath(path)
 
 def review_for_comments():
-    file = open(newfilename, 'r')
+    file = open(filename+".txt", 'r')
     count = 0
     for line in file:
         line = line.strip()
         if(len(line) > 0):
             if(len(line) > 20):
-                print("{}".format(line))
+                print("{}{}:".format(line))
 review_for_comments()      
 #add more validation below
 
